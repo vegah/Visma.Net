@@ -80,11 +80,13 @@
     <Compile Include="Lib\Data\CashSaleData.cs" />
     <Compile Include="Lib\Data\DimensionData.cs" />
     <Compile Include="Lib\Data\InventoryData.cs" />
+    <Compile Include="Lib\Data\InventoryIssueData.cs" />
     <Compile Include="Lib\Data\JournalTransactionData.cs" />
     <Compile Include="Lib\Data\ShipmentData.cs" />
     <Compile Include="Lib\VismaActionResult.cs" />
     <Compile Include="Models\CarrierDescription.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\CustomDto\ReasonCode.cs" />
     <Compile Include="Models\Enums\ContactMethods.cs" />
     <Compile Include="Models\CreditNote.cs" />
     <Compile Include="Models\Enums\EmployeeTitles.cs" />
@@ -93,6 +95,8 @@
     <Compile Include="Models\Enums\CustomerDocumentStatus.cs" />
     <Compile Include="Models\Enums\CreditRule.cs" />
     <Compile Include="Models\Enums\AccountTypes.cs" />
+    <Compile Include="Models\Enums\InventoryDocumentStatus.cs" />
+    <Compile Include="Models\Enums\InventoryTransactionType.cs" />
     <Compile Include="Models\Enums\StatementTypes.cs" />
     <Compile Include="Models\FinAccount.cs" />
     <Compile Include="Models\CustomDto\Country.cs" />
@@ -139,6 +143,8 @@
     <Compile Include="Lib\QueryableVismaNetCustomerInvoiceData.cs" />
     <Compile Include="Lib\QueryableVismaNetCustomerData.cs" />
     <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\InventoryIssue.cs" />
+    <Compile Include="Models\InventoryIssueLine.cs" />
     <Compile Include="Models\InvoiceBase.cs" />
     <Compile Include="Models\JournalTransaction.cs" />
     <Compile Include="Models\Enums\PaymentBy.cs" />
@@ -190,13 +196,6 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
-  </Target>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <PropertyGroup>
     <PostBuildEvent>

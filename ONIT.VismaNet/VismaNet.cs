@@ -26,6 +26,7 @@ namespace ONIT.VismaNetApi
         public readonly CreditNoteData CreditNote;
         public readonly ShipmentData Shipments;
         public readonly ContactData Contacts;
+        public readonly InventoryIssueData InventoryIssue;
 
 
         public readonly JournalTransactionData JournalTransactions;
@@ -74,6 +75,7 @@ namespace ONIT.VismaNetApi
             CreditNote = new CreditNoteData(_auth);
             Shipments = new ShipmentData(_auth);
             Contacts = new ContactData(_auth);
+            InventoryIssue = new InventoryIssueData(_auth);
         }
 
         public static string Version { get; private set; }
